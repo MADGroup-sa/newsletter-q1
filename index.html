@@ -1284,27 +1284,18 @@ env.innerHTML += secWrap('daraya', '03', Dr.label, `
   </div>
 
   <!-- صور الحملة -->
-  <div style="margin-bottom:16px;">
-    <div class="img-full" style="height:150px;margin-bottom:0;">
-      <img src="${Dr.adImage}" alt="${Dr.adCaption}" style="height:150px;">
-      ${Dr.adCaption ? `<div class="img-caption">${Dr.adCaption}</div>` : ''}
-    </div>
+  <div style="margin-bottom:16px;border-radius:var(--r);overflow:hidden;">
+    <img src="${Dr.adImage}" alt="${Dr.adCaption}" style="width:100%;display:block;object-fit:contain;background:#000;">
+    ${Dr.adCaption ? `<div class="img-caption">${Dr.adCaption}</div>` : ''}
   </div>
 
   <!-- الفيديو الرئيسي -->
-  <a href="https://www.youtube.com/watch?v=${Dr.mainVideo}" target="_blank"
-    style="display:block;position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:10px;text-decoration:none;background:#000;">
-    <img src="https://img.youtube.com/vi/${Dr.mainVideo}/hqdefault.jpg"
-      style="width:100%;display:block;object-fit:cover;height:200px;opacity:0.85;">
-    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-      <div style="width:56px;height:56px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
-    </div>
-    <div style="position:absolute;bottom:0;right:0;left:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,0.7));">
-      <span style="color:white;font-size:11px;font-weight:600;">شاهد على يوتيوب</span>
-    </div>
-  </a>
+  <div style="position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:10px;background:#000;aspect-ratio:16/9;">
+    <iframe src="https://www.youtube.com/embed/${Dr.mainVideo}?rel=0"
+      style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
 
   <!-- شبكة الفيديوهات الثانوية -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
@@ -1323,16 +1314,12 @@ env.innerHTML += secWrap('daraya', '03', Dr.label, `
         </div>
         <span style="font-size:10px;color:#4285F4;font-weight:600;font-family:inherit;">${v.label}</span>
       </a>` : `
-      <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank"
-        style="display:block;position:relative;border-radius:var(--r);overflow:hidden;height:110px;text-decoration:none;background:#000;">
-        <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg"
-          style="width:100%;height:110px;object-fit:cover;opacity:0.85;display:block;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="width:36px;height:36px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-      </a>`
+      <div style="position:relative;border-radius:var(--r);overflow:hidden;height:110px;background:#000;">
+        <iframe src="https://www.youtube.com/embed/${v.id}?rel=0"
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>`
     ).join('')}
   </div>
 
