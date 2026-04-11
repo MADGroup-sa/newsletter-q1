@@ -1307,14 +1307,14 @@ env.innerHTML += secWrap('daraya', '03', Dr.label, `
         <span style="font-size:11px;font-weight:700;color:white;font-family:inherit;text-align:center;position:relative;z-index:1;line-height:1.4;padding:0 8px;">دراية.. ما عندها خفايا</span>
       </a>` :
     v.type === 'drive' ? `
-      <div style="position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:#000;">
+      <div style="border-radius:var(--r);overflow:hidden;background:#000;position:relative;padding-bottom:56.25%;height:0;">
         <iframe src="https://drive.google.com/file/d/${v.id}/preview"
-          style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
           allow="autoplay" allowfullscreen></iframe>
       </div>` : `
-      <div style="position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:#000;">
+      <div style="border-radius:var(--r);overflow:hidden;background:#000;position:relative;padding-bottom:56.25%;height:0;">
         <iframe src="https://www.youtube.com/embed/${v.id}?rel=0"
-          style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>`
